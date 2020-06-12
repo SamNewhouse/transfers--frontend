@@ -1,10 +1,16 @@
 {
   "name": "hltv-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "net": "^1.0.2",
