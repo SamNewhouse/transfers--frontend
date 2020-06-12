@@ -1,12 +1,16 @@
 {
   "name": "hltv-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Liquipedia transfers using HLTV's directory of team logos, all called from a separate Laravel API.",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samnewhouse-theunit/transfers--serverless-frontend.git"
   },
   "keywords": [],
   "author": "",
