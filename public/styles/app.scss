@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Ubuntu:wght@300;400;700&display=swap');
+
+$ubuntu: 'Ubuntu', sans-serif;
+$bitter: 'Bitter', serif;
+
+$red: #D2222D;
+$green: #238823;
+$blue: #3895D3;
+
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:none;
+    box-sizing: border-box;
+    transition: all 233ms;
+}
+
+body {
+    background-color: #eee;
+    color: #232323;
+    font-family: $ubuntu;
+    overflow: hidden auto;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 2rem;
+
+    .inner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        max-width:1000px;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+}
+
+.transfer {
+    background-color: rgba(255,255,255,1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 1rem;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+
+    .players, .in-out {
+        align-items: center;
+        justify-content: space-around;
+        z-index: 10;
+    }
+
+    .background {
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        opacity: 0.035;
+        width: 100%;
+
+        &.right {
+            right: -50%;
+        }
+
+        &.left {
+            left: -50%;
+        }
+    }
+
+    .players {
+        margin-bottom: 2rem;
+
+        .player {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            width:100%;
+    
+            .name-age {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex: 1 1 auto;
+    
+                h3 {
+                    font-family: $bitter;
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+    
+                span {
+                    font-size: 12px;
+                    padding-left: 12px;
+                }
+            }
+    
+    
+            h4 {
+                font-family: $ubuntu;
+            }
+        }
+
+    }
+
+    .in {
+        stroke: $green;
+    }
+
+    .out {
+        stroke: $red;
+    }
+
+    .move {
+        stroke: $blue;
+    }
+
+    .in, .out, .move {
+        width: 3rem;
+        height: auto;
+    }
+
+    .previous-team img, .new-team img {
+        display: flex;
+        width: 13.5rem;
+        height: auto;
+    }
+}
