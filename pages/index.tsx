@@ -5,11 +5,10 @@ import '../public/styles/app.scss'
 
 
 class App extends Component {
+    
     render() {
 
-        const transfers = data;
-
-        const forTransfers = transfers.map((transfer) => 
+        const forTransfers = data.map((transfer) => 
             <Transfer
                     player={transfer.player}
                     transferPreviousTeam={transfer.transferPreviousTeam}
@@ -26,7 +25,9 @@ class App extends Component {
                 </div>
             </div>
         );
+
       }
+      
 }
 
 export default App;
