@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
+import { motion } from 'framer-motion';
 
 interface Props {
+    id: number,
     player: {
         name: string, 
         age: number,
@@ -22,7 +24,13 @@ export default class extends PureComponent<Props> {
 
     public render(): JSX.Element {
 
-        const { player, transferPreviousTeam, transferNewTeam, transfer, transferDateTime } = this.props;
+        const { id, player, transferPreviousTeam, transferNewTeam, transfer, transferDateTime } = this.props;
+
+        const item = {
+            whileHover: { scale: 1.1 },
+            hidden: { opacity:0.5, scale: 0 },
+            show: { opacity: 1, scale: 1 }
+        }
 
         if(transfer !== "move"){
             var transferIcon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
@@ -40,10 +48,10 @@ export default class extends PureComponent<Props> {
         }
 
         return (
-            <div className="transfer" data-transfer-date={transferDateTime}>
+            <motion.div className="transfer" key={id.toString()} id={id.toString()} data-transfer-date={transferDateTime} variants={item} whileHover="hover">
                 <div className="row players">
-                    {player.map(player =>
-                        <div className="player">
+                    {player.map((player, index) =>
+                        <div className="player" key={index} id={index.toString()}>
                             <div className="name-age">
                                 <h3>{player.name}</h3>
                                 <span>{player.age}</span>
@@ -63,7 +71,7 @@ export default class extends PureComponent<Props> {
                 </div>
                 <div className="background left" style={{ backgroundImage: `url(${transferPreviousTeam.logo})` }}></div>
                 <div className="background right" style={{ backgroundImage: `url(${transferNewTeam.logo})` }}></div>
-            </div>
+            </motion.div>
         );
 
     }

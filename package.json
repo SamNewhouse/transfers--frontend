@@ -10,17 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/samnewhouse-theunit/transfers--serverless-frontend.git"
+    "url": "git://github.com/samnewhouse/transfers--serverless-frontend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/react-lazyload": "^2.6.0",
     "@zeit/next-sass": "^1.0.1",
+    "framer-motion": "^1.11.1",
     "net": "^1.0.2",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-lazyload": "^3.0.0",
     "sass": "^1.26.5"
   },
   "devDependencies": {
